@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../styles/landingPage.css';
-import profilePic from '../../assets/me.png'; // Profile picture
+import profilePic from '../../assets/me.jpg'; // Profile picture
 
 const LandingPage: React.FC = () => {
   return (
