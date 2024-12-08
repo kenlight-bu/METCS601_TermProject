@@ -1,0 +1,27 @@
+[
+    {
+      "title": "Cooking Background",
+      "description": "Explore delicious recipes and cooking tips.",
+      "image": "/images/cooking-thumb.png",
+      "link": "/showcase/cooking/index.htm"
+    },
+    {
+      "title": "Fashion Background",
+      "description": "Dive into the latest trends in fashion.",
+      "image": "/images/fashion-thumb.png",
+      "link": "/showcase/fashion/index.htm"
+    },
+    {
+      "title": "Furniture Background",
+      "description": "Discover stunning furniture designs.",
+      "image": "/images/furniture-thumb.png",
+      "link": "/showcase/furniture/index.htm"
+    },
+    {
+      "title": "Coffee Background",
+      "description": "Discover your perfect curated coffee collection",
+      "image": "/images/coffee-thumb.png",
+      "link": "/showcase/coffee/index.htm"
+    }
+  ]
+  

@@ -1,13 +1,15 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Layout from './components/layout/layout';
-import LandingPage from './views/landingPage/landingPage';
-import AboutPage from './views/aboutPage/aboutPage'; // Import AboutPage
-import PortfolioPage from './views/portfolioPage/portFolioPage';
+import Layout from './views/layout';
+import LandingPage from './views/landingPage';
+import AboutPage from './views/aboutPage';
+import PortfolioPage from './views/portFolioPage';
+import ResumePage from './views/resumePage';
+import ContactPage from './views/contactPage';
 
 const App: React.FC = () => {
   useEffect(() => {
-    document.title = 'kenlight.netlify.app'; // Set the title for all pages
+    document.title = 'Kenny Light';
   }, []);
 
   return (
@@ -15,9 +17,10 @@ const App: React.FC = () => {
       <Layout>
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/about" element={<AboutPage />} /> {/* Add AboutPage */}
+          <Route path="/about" element={<AboutPage />} />
           <Route path="/portfolio" element={<PortfolioPage />} />
-          <Route path="/contact" element={<div>Contact Page</div>} />
+          <Route path="/resume" element={<ResumePage />} />
+          <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </Layout>
     </Router>

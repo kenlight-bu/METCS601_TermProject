@@ -1,0 +1,118 @@
+/* Navigation Menu */
+.nav-list {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list li a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-list li a:hover {
+    color: #007bff;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    /* Hidden on larger screens */
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Active Link Styling */
+.active-link {
+    color: #007bff; /* Highlighted text color */
+    font-weight: bold; /* Make it stand out */
+    border-bottom: 2px solid #007bff; /* Add a bottom border for emphasis */
+    padding-bottom: 2px; /* Adjust spacing to fit the border */
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+        /* Show on smaller screens */
+    }
+
+    .hamburger-icon {
+        display: block;
+        /* Ensure it's a block-level element */
+        width: 25px;
+        height: 3px;
+        /* Slightly thicker for better visibility */
+        background-color: white;
+        position: relative;
+        transition: all 0.3s ease;
+    }
+
+    .hamburger-icon::before,
+    .hamburger-icon::after {
+        content: '';
+        display: block;
+        /* Ensure pseudo-elements are block-level */
+        width: 25px;
+        height: 3px;
+        /* Match the thickness of the main line */
+        background-color: white;
+        position: absolute;
+        left: 0;
+        transition: all 0.3s ease;
+    }
+
+    .hamburger-icon::before {
+        top: -8px;
+        /* Position above the main line */
+    }
+
+    .hamburger-icon::after {
+        top: 8px;
+        /* Position below the main line */
+    }
+
+    .hamburger:hover .hamburger-icon,
+    .hamburger:hover .hamburger-icon::before,
+    .hamburger:hover .hamburger-icon::after {
+        background-color: #007bff;
+        /* Highlight color on hover */
+    }
+
+    .hamburger-icon.open {
+        background-color: transparent;
+        /* Hide the main line when open */
+    }
+
+    .hamburger-icon.open::before {
+        transform: rotate(45deg) translate(5px, 5px);
+        /* Rotate to form an "X" */
+    }
+
+    .hamburger-icon.open::after {
+        transform: rotate(-45deg) translate(5px, -5px);
+        /* Rotate to form an "X" */
+    }
+
+    .nav-list {
+        display: none;
+        /* Initially hidden */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #222222;
+        width: 150px;
+        padding: 1rem;
+        border-radius: 5px;
+        z-index: 10;
+    }
+
+    .nav-list.open {
+        display: flex;
+        /* Show menu when open */
+    }
+}

@@ -1,12 +1,95 @@
+/* Portfolio Page Wrapper */
+.portfolio-page {
+  display: flex;
+  flex-wrap: nowrap; /* Prevent wrapping of children */
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  animation: fadeIn 1.5s ease-in-out;
+  background-color: #2c2f3a;
+}
+
+/* Sidebar for Education Section */
+.education-sidebar {
+  flex: 0 0 25%; /* Sidebar takes up 25% of the page */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0rem 1rem 1rem 1rem;
+  height: auto; /* Allow the sidebar height to adjust naturally */
+  max-height: 100%; /* Prevent stretching */
+  background-color: #1e2128;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+/* Education Sidebar Title */
+.education-sidebar h1 {
+  color: #007bff;
+  font-size: 2.5rem;
+}
+
+/* Education Wrapper */
+.education-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  text-decoration: none;
+  height: 100%; /* Let the height adjust naturally */
+  width: 100%; /* Prevent overflow */
+}
+
+/* Graduation Hat Image */
+.education-sidebar img {
+  width: 130px; 
+  height: 130px;
+  padding-top: 10px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  object-fit: cover;
+}
+
+/* Education Details */
+.education-item {
+  text-align: center;
+  line-height: 1rem;
+  padding-top: 2rem;
+}
+
+.education-item h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #ffdcc3;
+}
+
+.education-item p {
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+}
+
+/* Main Section */
+.portfolio-main {
+  flex: 1; /* Occupies the remaining space */
+}
+
+.portfolio-main h1 {
+  color: #ffdcc3;
+  font-size: 2.5rem;
+}
+
 /* Projects Grid */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Two equal columns */
-  gap: 2rem; /* Space between grid items */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
   animation: fadeIn 2s ease-in-out;
 }
 
-/* Project Card */
+/* Project Card as a link */
 .project-card {
   display: flex;
   flex-direction: column;
@@ -15,7 +98,10 @@
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+  color: inherit;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
 .project-card:hover {
@@ -25,37 +111,32 @@
 
 /* Image Container */
 .image-container {
-  width: 100%; /* Full width of the card */
-  aspect-ratio: 16 / 9; /* Maintain consistent aspect ratio */
+  width: 100%; 
+  max-width: 300px; 
+  height: auto; 
   position: relative;
-  overflow: hidden; /* Crop any overflow */
-  border-radius: 10px 10px 0 0; /* Round the corners of the image container */
-  max-width: 300px; /* Set a maximum width */
-  min-width: 300px; /* Set a minimum width */
-  max-height: 274px; /* Maintain aspect ratio max height (16/9 of 500px width) */
-  min-height: 274px; /* Maintain aspect ratio min height (16/9 of 300px width) */
+  overflow: hidden; 
+  border-radius: 8px; 
+  margin-top: 10px;
 }
 
-/* Website Screenshot */
 .website-screenshot {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%; /* Fill the container width */
-  height: 100%; /* Fill the container height */
-  object-fit: cover; /* Maintain aspect ratio and fill the container */
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: inherit;
 }
 
 /* Project Details */
 .project-details {
   padding: 1rem;
   text-align: center;
-  max-width: 500px; /* Match the max width of the image container */
+  max-width: 500px;
 }
 
 .project-details h3 {
   font-size: 1.5rem;
-  color: #007bff;
+  color: white;
   margin-bottom: 0.5rem;
 }
 
@@ -65,24 +146,106 @@
   margin-bottom: 1rem;
 }
 
-.view-project-button {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  background-color: #007bff;
-  color: #ffffff;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.view-project-button:hover {
-  background-color: #0056b3;
-  transform: scale(1.05);
-}
-
-/* Responsive Design */
 @media (max-width: 768px) {
+  .portfolio-page {
+    flex-direction: column; /* Stack the sidebar below the main content */
+  }
+
+  .education-sidebar {
+    flex: 1; /* Allow the sidebar to take full width when stacked */
+    margin: 1rem 0; /* Add some spacing above and below */
+  }
+
+  .education-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Ensure it takes the full width */
+    text-align: center; /* Center align contents */
+  }
+
+  /* Graduation Hat Image */
+  .education-sidebar img {
+    width: 130px; /* Small image on top of both items */
+    height: 130px;
+    border-radius: 50%;
+    margin-bottom: 1rem; /* Space below the image */
+    object-fit: cover;
+  }
+
+  .education-items {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap onto the next line if necessary */
+    justify-content: center; /* Center the items horizontally */
+    gap: 1rem; /* Add spacing between items */
+    width: 100%; /* Ensure the container spans full width */
+  }
+
+  .education-item {
+    flex: 0 0 45%; /* Each item takes 45% of the width */
+    text-align: center;
+    line-height: 1.5rem; /* Add consistent line spacing */
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio-page {
+    flex-direction: column; /* Stack the sidebar below the main content */
+  }
+
+  .education-sidebar {
+    flex: 1; /* Allow the sidebar to take full width when stacked */
+    margin: 1rem 0; /* Add some spacing above and below */
+  }
+
+  .education-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Ensure it takes the full width */
+    text-align: center; /* Center align contents */
+  }
+
+  /* Graduation Hat Image */
+  .education-sidebar img {
+    width: 130px; /* Small image on top of both items */
+    height: 130px;
+    border-radius: 50%;
+    margin-bottom: 1rem; /* Space below the image */
+    object-fit: cover;
+  }
+
+  .education-items {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap onto the next line if necessary */
+    justify-content: center; /* Center the items horizontally */
+    gap: 1rem; /* Add spacing between items */
+    width: 100%; /* Ensure the container spans full width */
+  }
+
+  .education-item {
+    flex: 0 0 45%; /* Each item takes 45% of the width */
+    text-align: center;
+    line-height: 1.5rem; /* Add consistent line spacing */
+  }
+}
+
+@media (max-width: 669px) {
+  .education-items {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items in the column */
+  }
+
+  .education-item {
+    flex: 0 0 auto; /* Adjust size to fit content */
+    width: 100%; /* Make items span full width */
+  }
+}
+
+
+
+@media (max-width: 570px) {
   .projects-grid {
-    grid-template-columns: 1fr; /* Single column for smaller screens */
+    grid-template-columns: 1fr; /* Make the grid single-column */
   }
 }
