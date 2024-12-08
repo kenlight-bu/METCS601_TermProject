@@ -1,6 +1,3 @@
-Here’s the updated content in Markdown format:
-
-```markdown
 ## Project Goal
 
 The goal of this project is to create a professional portfolio website that showcases my skills, experience, and projects as a software developer. This website serves as a digital resume and a personal brand statement, allowing potential employers, clients, and collaborators to learn more about my expertise and view examples of my work.
@@ -33,7 +30,6 @@ This project leverages modern web development technologies and tools, including:
 
 The project follows a well-organized folder structure, making it easy to navigate and maintain:
 
-```
 klight-portfolio/
 │
 ├── public/                     # Contains static assets like the index.html file
@@ -63,7 +59,6 @@ klight-portfolio/
 ├── package-lock.json           # Dependency tree lockfile
 ├── tsconfig.json               # TypeScript configuration
 └── README.md                   # Project documentation
-```
 
 ---
 
@@ -74,4 +69,3 @@ The application is built with reusable, modular React components, ensuring maint
 - **Modular CSS**: Each page/component has its own CSS file located in the `styles/` folder for scoped styling.
 - **Centralized Assets**: All images and other media files are stored in the `assets/` folder to keep the project organized.
 - **Responsive Design**: CSS Flexbox and Grid are used to ensure layouts adapt seamlessly to different screen sizes.
-```
