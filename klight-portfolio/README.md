@@ -30,6 +30,7 @@ This project leverages modern web development technologies and tools, including:
 
 The project follows a well-organized folder structure, making it easy to navigate and maintain:
 
+```
 klight-portfolio/
 │
 ├── public/                     # Contains static assets like the index.html file
@@ -59,8 +60,7 @@ klight-portfolio/
 ├── package-lock.json           # Dependency tree lockfile
 ├── tsconfig.json               # TypeScript configuration
 └── README.md                   # Project documentation
-
----
+```
 
 ## Component-Based Architecture
 
